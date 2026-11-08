@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joyeux anniversaire GRANDO PIF</title>
+<style>
+  :root{--bg:#0c0c0d;--ink:#f4f1ea;--acc:#e6ff3d;--mut:#8b8b8b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.06;
+    background-image:repeating-linear-gradient(45deg,#fff 0 1px,transparent 1px 7px)}
+  .tag{font:700 12px/1 monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--acc)}
+  section{padding:72px 20px;max-width:900px;margin:0 auto;position:relative}
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:22px}
+  .hero h1{font-family:Impact,"Arial Narrow Bold",sans-serif;font-weight:900;text-transform:uppercase;
+    font-size:clamp(54px,17vw,150px);line-height:.88;letter-spacing:-.01em}
+  .hero h1 span{display:block;color:var(--acc);-webkit-text-stroke:0;transform:rotate(-3deg)}
+  .photo{width:min(78vw,340px);aspect-ratio:4/5;border:3px solid var(--acc);background:#1b1b1c;
+    box-shadow:10px 10px 0 var(--acc);transform:rotate(2deg);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo .ph{color:var(--mut);font:12px monospace;text-align:center;padding:16px}
+  .date{font:700 14px monospace;letter-spacing:.2em;border:2px solid var(--ink);padding:8px 14px;text-transform:uppercase}
+  .msg{text-align:center}
+  .msg h2{font-family:Impact,sans-serif;text-transform:uppercase;font-size:clamp(34px,9vw,64px);line-height:1;margin:14px 0 22px}
+  .msg p{font-size:clamp(17px,4.2vw,21px);line-height:1.65;color:#d8d5cd;max-width:620px;margin:0 auto 14px}
+  .msg b{color:var(--acc)}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+  .gallery .photo{width:100%;box-shadow:6px 6px 0 var(--acc)}
+  .gallery .photo:nth-child(1){transform:rotate(-2deg)}
+  .gallery .photo:nth-child(2){transform:rotate(2deg)}
+  footer{text-align:center;padding:50px 20px 110px;color:var(--mut);font:12px monospace;letter-spacing:.15em;text-transform:uppercase}
+  .marquee{overflow:hidden;white-space:nowrap;background:var(--acc);color:#000;font:900 18px Impact,sans-serif;text-transform:uppercase;padding:10px 0;transform:rotate(-1.2deg);margin:10px -10px}
+  .marquee div{display:inline-block;animation:m 18s linear infinite}
+  @keyframes m{to{transform:translateX(-50%)}}
+  #musicBtn{position:fixed;right:16px;bottom:16px;z-index:9999;width:50px;height:50px;border-radius:50%;border:2px solid var(--acc);
+    background:#000;color:var(--acc);font-size:22px;cursor:pointer}
+  .confetti{position:fixed;top:-12px;width:9px;height:14px;z-index:5;pointer-events:none;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="tag">Joyeux anniversaire</div>
+  <div class="photo"><img src="photos/principale.jpg" alt="Grando Pif" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'Mets ta photo dans photos/principale.jpg'}))"></div>
+  <h1>Grando<span>Pif</span></h1>
+  <div class="date">11 novembre</div>
+</section>
+
+<div class="marquee"><div>Happy Birthday Grando Pif ✦ Joyeux anniversaire ✦ Happy Birthday Grando Pif ✦ Joyeux anniversaire ✦ Happy Birthday Grando Pif ✦ Joyeux anniversaire ✦ Happy Birthday Grando Pif ✦ Joyeux anniversaire ✦ </div></div>
+
+<section class="msg">
+  <div class="tag">Un message pour toi</div>
+  <h2>Un grand parmi les grands</h2>
+  <p>Aujourd'hui, on célèbre un homme qui avance avec <b>style</b>, avec <b>cœur</b> et avec <b>classe</b>.</p>
+  <p>Que cette nouvelle année t'apporte la réussite, la santé et la joie, et que chaque projet que tu touches devienne grand.</p>
+  <p>Joyeux anniversaire, <b>Grando Pif</b>. Que le meilleur reste à venir.</p>
+</section>
+
+<section>
+  <div class="tag" style="text-align:center;margin-bottom:22px">Souvenirs</div>
+  <div class="gallery">
+    <div class="photo"><img src="photos/photo2.jpg" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'photos/photo2.jpg'}))"></div>
+    <div class="photo"><img src="photos/photo3.jpg" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'photos/photo3.jpg'}))"></div>
+  </div>
+</section>
+
+<footer>Fait avec ❤ pour Grando Pif</footer>
+
+<button id="musicBtn" aria-label="Musique">🔇</button>
+
+<script>
+(function () {
+  /* ---- Musique Joyeux anniversaire (synthétisée) ---- */
+  var N={C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392,A4:440,B4:493.88,C5:523.25,D5:587.33,E5:659.25,F5:698.46,G5:783.99};
+  var tune=[['G4',.75],['G4',.25],['A4',1],['G4',1],['C5',1],['B4',2],
+            ['G4',.75],['G4',.25],['A4',1],['G4',1],['D5',1],['C5',2],
+            ['G4',.75],['G4',.25],['G5',1],['E5',1],['C5',1],['B4',1],['A4',1],
+            ['F5',.75],['F5',.25],['E5',1],['C5',1],['D5',1],['C5',2]];
+  var BEAT=.5,ctx=null,playing=false,timer=null,btn=document.getElementById('musicBtn');
+  function playOnce(){
+    var t=ctx.currentTime+.1;
+    tune.forEach(function(n){
+      var o=ctx.createOscillator(),g=ctx.createGain(),d=n[1]*BEAT;
+      o.type='triangle';o.frequency.value=N[n[0]];
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.03);
+      g.gain.exponentialRampToValueAtTime(.001,t+d*.95);
+      o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+d);t+=d;
+    });
+    return (t-ctx.currentTime)*1000;
+  }
+  function loop(){if(!playing)return;var ms=playOnce();timer=setTimeout(loop,ms+1500);}
+  function start(){
+    if(!ctx)ctx=new(window.AudioContext||window.webkitAudioContext)();
+    if(ctx.state==='suspended')ctx.resume();
+    playing=true;btn.textContent='🔊';loop();
+  }
+  function stop(){playing=false;clearTimeout(timer);btn.textContent='🔇';}
+  btn.addEventListener('click',function(e){e.stopPropagation();playing?stop():start();});
+  function first(){if(!playing)start();['pointerdown','keydown','touchstart'].forEach(function(ev){document.removeEventListener(ev,first);});}
+  ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,first,{once:true});});
+
+  /* ---- Confettis ---- */
+  var cols=['#e6ff3d','#f4f1ea','#ff3d6e','#3dd5ff'];
+  for(var i=0;i<40;i++){
+    var c=document.createElement('i');c.className='confetti';
+    c.style.left=Math.random()*100+'vw';
+    c.style.background=cols[i%cols.length];
+    c.style.animationDuration=(4+Math.random()*5)+'s';
+    c.style.animationDelay=(Math.random()*6)+'s';
+    document.body.appendChild(c);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+Mets ici tes photos :
+principale.jpg (photo du haut)
+photo2.jpg et photo3.jpg (galerie)
