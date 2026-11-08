@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Joyeux anniversaire GRANDO PIF</title>
 <style>
-  :root{--bg:#0c0c0d;--ink:#f4f1ea;--acc:#e6ff3d;--mut:#8b8b8b}
+  :root{--bg:#0c0c0d;--ink:#f4f1ea;--acc:#ff5a1f;--yel:#ffd23f;--mut:#8b8b8b}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
   body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.06;
     background-image:repeating-linear-gradient(45deg,#fff 0 1px,transparent 1px 7px)}
-  .tag{font:700 12px/1 monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--acc)}
+  .tag{font:700 12px/1 monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--yel)}
   section{padding:72px 20px;max-width:900px;margin:0 auto;position:relative}
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:22px}
   .hero h1{font-family:Impact,"Arial Narrow Bold",sans-serif;font-weight:900;text-transform:uppercase;
@@ -25,7 +25,7 @@
   .msg{text-align:center}
   .msg h2{font-family:Impact,sans-serif;text-transform:uppercase;font-size:clamp(34px,9vw,64px);line-height:1;margin:14px 0 22px}
   .msg p{font-size:clamp(17px,4.2vw,21px);line-height:1.65;color:#d8d5cd;max-width:620px;margin:0 auto 14px}
-  .msg b{color:var(--acc)}
+  .msg b{color:var(--yel)}
   .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
   .gallery .photo{width:100%;box-shadow:6px 6px 0 var(--acc)}
   .gallery .photo:nth-child(1){transform:rotate(-2deg)}
@@ -67,6 +67,12 @@
   </div>
 </section>
 
+<section style="text-align:center">
+  <div class="tag" style="margin-bottom:22px">L'affiche</div>
+  <img src="photos/affiche.png" alt="Affiche anniversaire PIF" style="width:100%;max-width:520px;border:3px solid var(--acc);box-shadow:8px 8px 0 var(--acc)">
+  <p style="margin-top:26px"><a href="photos/affiche.png" download="affiche-pif.png" style="color:#000;background:var(--yel);font:900 16px Impact,sans-serif;text-transform:uppercase;padding:12px 22px;text-decoration:none">Télécharger l'affiche</a></p>
+</section>
+
 <footer>Fait avec ❤ pour Grando Pif</footer>
 
 <button id="musicBtn" aria-label="Musique">🔇</button>
@@ -103,7 +109,7 @@
   ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,first,{once:true});});
 
   /* ---- Confettis ---- */
-  var cols=['#e6ff3d','#f4f1ea','#ff3d6e','#3dd5ff'];
+  var cols=['#ff5a1f','#ffd23f','#f4f1ea','#ff3d6e','#3dd5ff'];
   for(var i=0;i<40;i++){
     var c=document.createElement('i');c.className='confetti';
     c.style.left=Math.random()*100+'vw';
